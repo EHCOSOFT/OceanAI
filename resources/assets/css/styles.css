@@ -1658,3 +1658,32 @@
         padding: 2px 12px;
     }
 }
+
+.password-modal p {
+    color: var(--black-900);
+    font-size: var(--text-lg);
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+.password-modal .input-group {
+    flex-direction: row;
+}
+
+.password-modal .input-group button {
+    border-radius: 8px;
+    justify-content: center;
+    width: 110px;
+}
+
+@media (min-width:992px) {
+    .password-modal p {
+        font-size: 18px;
+        margin: 0 0 20px 0;
+    }
+    
+    .password-modal .input-group button {
+        font-size: 18px;
+        padding: 16px 20px;
+    }
+}

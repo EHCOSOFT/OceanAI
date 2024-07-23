@@ -1433,7 +1433,7 @@ input::placeholder {
     display: flex;
     gap: 8px;
     width: 100%;
-}
+}ㅇㅇ
 
 .file-group input {
     display: none;
@@ -1581,19 +1581,7 @@ input::placeholder {
 }
 
 .modal-body {
-    overflow: scroll;
-    max-height: calc(100vh - 400px);
     padding: 0 4px 0 0;
-}
-
-.modal-body::-webkit-scrollbar {
-    background: none;
-    width: 4px;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-    background: var(--black-300);
-    border-radius: 100px;
 }
 
 .modal-body img {

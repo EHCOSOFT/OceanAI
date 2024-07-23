@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-12 mo">
                             <ul class="reference">
-                                <li>
+                                <li class="open-modal" data-modal-id="pssswordCheckModal">
                                     <a href="#"><i class="ico i-lock"></i>클라우드 기반 차세대 VTS 통합 플랫폼 개발</a>
                                 </li>
                                 <li>
@@ -94,23 +94,23 @@
                                         <th>문의제목</th>
                                         <th>첨부파일</th>
                                         <th>등록일자</th>
-                                        <th>조회수</th>
+                                        <th>작성자</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr class="open-modal" data-modal-id="pssswordCheckModal">
                                         <td>1</td>
                                         <td><h6><i class="ico i-lock"></i>문의제목입니다.</h6></td>
                                         <td><span class="icon"><i class="ico i-file"></i></span></td>
                                         <td>2024-07-01</td>
-                                        <td>825</td>
+                                        <td>김*우</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
                                         <td><h6>문의제목입니다.</h6></td>
                                         <td><span class="icon"><i class="ico i-file"></i></span></td>
                                         <td>2024-07-01</td>
-                                        <td>825</td>
+                                        <td>김*우</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -136,6 +136,24 @@
         <footer class="footer" id="footer"></footer>
         <!-- End : Footer -->
     </div>
+
+    <!-- S : pssswordCheckModal :: 비밀번호 확인-->
+    <div id="pssswordCheckModal" class="modal-wrap password-modal">
+        <div class="modal-inner">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>작성 시 등록하신 비밀번호를 입력해주세요</p>
+                    <div class="input-wrap">
+                        <div class="input-group">
+                            <input type="password" placeholder="비밀번호">
+                            <button type="button" class="btn btn-md btn-primary">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- E : pssswordCheckModal -->
 
     <!-- Start : Script -->
     <script src="lib/jquery.min.js"></script>
