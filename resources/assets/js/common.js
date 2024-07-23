@@ -1,10 +1,3 @@
-$(document).ready(function () {
-
-
-
-
-});
-
 
 $(document).ready(function () {
     // 공통 jQuery 코드 (모바일과 PC 모두에 적용)
