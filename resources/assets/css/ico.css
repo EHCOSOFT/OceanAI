@@ -1,0 +1,58 @@
+.ico {
+    background-size: cover !important;
+    display: inline-block;
+}
+
+.i-chevron-right {
+    background: url(../img/ico/i-chevron-right.png);
+    height: 16px;
+    width: 16px;
+}
+
+.i-plus-w {
+    background: url(../img/ico/i-plus-w.png);
+    height: 24px;
+    width: 24px;
+}
+
+.i-chevron-right-w {
+    background: url(../img/ico/i-chevron-right-w.png);
+    height: 16px;
+    width: 16px;
+}
+
+.i-arrow-right {
+    background: url(../img/ico/i-arrow-right.png);
+    height: 24px;
+    width: 24px;
+}
+
+.i-arrow-right-w {
+    background: url(../img/ico/i-arrow-right-w.png);
+    height: 16px;
+    width: 16px;
+}
+
+.i-arrow-left-w {
+    background: url(../img/ico/i-arrow-left-w.png);
+    height: 16px;
+    width: 16px;
+}
+
+.i-chevron-left-b {
+    background: url(../img/ico/i-chevron-left-b.png);
+    height: 16px;
+    width: 16px;
+}
+
+.i-file {
+    background: url(../img/ico/i-file.png);
+    height: 24px;
+    width: 24px;
+}
+
+.i-lock {
+    background: url(../img/ico/i-lock.png);
+    height: 20px;
+    width: 20px;
+}

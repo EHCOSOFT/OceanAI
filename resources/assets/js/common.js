@@ -1,0 +1,336 @@
+$(document).ready(function () {
+
+
+
+
+});
+
+
+$(document).ready(function () {
+    // 공통 jQuery 코드 (모바일과 PC 모두에 적용)
+    function applyCommonjQuery() {
+        $("#header").append(Header());
+        $("#footer").append(Footer());
+
+        function Header() {
+            return `
+            <div class="container">
+                <div class="header-wrap">
+                    <a href="javasciprt:void(0);">
+                        <div class="header-logo"></div>
+                    </a>
+                    <nav class="header-navbar">
+                        <ul class="nav">
+                            <li>
+                                <a href="#">기업소개</a>
+                                <ul class="nav-list">
+                                    <li class="nav-item">
+                                        <a href="기업소개.html#aboutVision">회사소개</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="기업소개.html#aboutHistory">연혁</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="기업소개.html#aboutPartners">주요 고객사</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);">회사 소식</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">제품정보</a>
+                                <ul class="nav-list">
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);">X-BAND RADAR</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);">파랑계측모니터링 시스템</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);">사용자 맞춤형 모니터링 시스템</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">특허 및 연구</a>
+                                <ul class="nav-list">
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);">특허</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);">연구 및 실적</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">고객 지원</a>
+                                <ul class="nav-list">
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);">자료실</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);">문의</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header-menu">
+                        <button type="button" class="btn btn-globe"></button>
+                        <div class="header-globe">
+                            <ul>
+                                <li class="active">
+                                    <a href="#">KO</a>
+                                </li>
+                                <li>
+                                    <a href="#">EN</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-menu"></button>
+                    </div>
+
+                    <div class="header-nav">
+                        <div class="header-nav-header">
+                            <button type="button" class="btn btn-close"></button>
+                        </div>
+                        <div class="header-nav-body">
+                            <ul class="left">
+                                <li class="active">
+                                    <a href="#" data-target="#menu-one">기업소개</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-target="#menu-two">제품정보</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-target="#menu-three">특허 및 연구</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-target="#menu-four">고객 지원</a>
+                                </li>
+                            </ul>
+                            <div class="right">
+                                <ul id="menu-one" class="active">
+                                    <li>
+                                        <a href="#">회사소개</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">연혁</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">주요 고객사</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">회사 소식</a>
+                                    </li>
+                                </ul>
+                                <ul id="menu-two" class="none">
+                                    <li>
+                                        <a href="#">X-BAND RADAR</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">파랑계측모니터링 시스템</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">사용자 맞춤형 모니터링 시스템</a>
+                                    </li>
+                                </ul>
+                                <ul id="menu-three" class="none">
+                                    <li>
+                                        <a href="#">특허</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">연구 및 실적</a>
+                                    </li>
+                                </ul>
+                                <ul id="menu-four" class="none">
+                                    <li>
+                                        <a href="#">자료실</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">문의</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+        };
+
+        function Footer() {
+            return `
+            <div class="container">
+                    <div class="footer-wrap">
+                        <div class="footer-info">
+                            <a href="javascript:void(0);">
+                                <img src="img/logo-w.png" alt="OCEAN AI">
+                            </a>
+                            <div class="footer-text">
+                                <h6>부산광역시 남구 신선로 428, 410-9호<br class="mo">(용당동, 동명대학교 국제산학협력관)</h6>
+                                <h6>+82-00-000-0000</h6>
+                                <h6>abc@gmail.com</h6>
+                            </div>
+                        </div> 
+                        <hr>
+                        <p>@ 2024 OCEANAI. ALL RIGHTS RESERVED</p>
+                    </div>
+                </div>
+            `
+        };
+
+        // 페이지가 완전히 로드된 후 body에 'loaded' 클래스 추가
+        $('body').addClass('loaded');
+
+        // 스크롤 이벤트 핸들러
+        var header = $('#header'); // 헤더 선택
+        var scrolled = false; // 스크롤 여부를 추적하는 변수
+
+        // 스크롤 이벤트 핸들러
+        $(window).on('scroll', function () {
+            // 페이지의 스크롤 위치가 50px 이상일 때
+            if ($(this).scrollTop() > 50) {
+                header.addClass('active'); // .active 클래스 추가
+                scrolled = true; // 스크롤됨을 표시
+            } else {
+                header.removeClass('active'); // .active 클래스 제거
+                scrolled = false; // 스크롤되지 않은 상태로 표시
+            }
+        });
+
+        // header 요소에 마우스 오버/아웃 시 active 클래스 추가/제거
+        $('#header').hover(
+            function () {
+                $(this).addClass('active');
+            }, function () {
+                if (!scrolled) { // 스크롤되지 않은 상태에서만 active 클래스 제거
+                    $(this).removeClass('active');
+                }
+            }
+        );
+
+        // .nav > li 클릭 이벤트 핸들러
+        $('.nav > li > a').on('click', function (e) {
+            e.preventDefault(); // 기본 링크 동작 방지
+
+            // 현재 클릭된 li 요소
+            var $parentLi = $(this).parent('li');
+
+            // 다른 모든 li 요소에서 active 클래스 제거
+            $('.nav > li').removeClass('active');
+            $('.nav-list').removeClass('active');
+
+            // 현재 클릭된 li 요소에 active 클래스 추가
+            $parentLi.addClass('active');
+            $parentLi.find('.nav-list').addClass('active');
+        });
+
+        // .nav-list 영역 밖을 클릭하면 active 클래스 제거
+        $(document).on('click', function (e) {
+            // 클릭한 요소가 .nav 또는 그 자손이 아닌 경우
+            if (!$(e.target).closest('.nav').length) {
+                // 모든 li 요소와 nav-list에서 active 클래스 제거
+                $('.nav > li').removeClass('active');
+                $('.nav-list').removeClass('active');
+            }
+        });
+
+        // .btn-menu를 클릭하면 .header-nav가 부드럽게 나타남
+        $('.btn-menu').on('click', function () {
+            $('.header-nav').addClass('active');
+        });
+
+        // .btn-close를 클릭하면 .header-nav가 부드럽게 사라짐
+        $('.btn-close').on('click', function () {
+            $('.header-nav').removeClass('active');
+        });
+
+        // .btn-globe를 클릭하면 .header-globe에 active 클래스를 추가
+        $('.btn-globe').on('click', function () {
+            $('.header-globe').addClass('active');
+        });
+
+        // .header-globe 요소 밖을 클릭하면 .header-globe에서 active 클래스를 제거
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.btn-globe, .header-globe').length) {
+                $('.header-globe').removeClass('active');
+            }
+        });
+
+        // .left ul li a 클릭 시 동작
+        $('.header-nav-body .left li a').on('click', function (e) {
+            e.preventDefault(); // 기본 동작 방지
+
+            // 모든 li에서 active 클래스 제거
+            $('.header-nav-body .left li').removeClass('active');
+
+            // 클릭된 a의 부모 li에 active 클래스 추가
+            $(this).parent('li').addClass('active');
+
+            // 모든 .right ul에서 active 클래스 제거하고 none 클래스 추가
+            $('.header-nav-body .right ul').removeClass('active').addClass('none');
+
+            // 클릭된 a의 data-target 속성 값을 가져와 해당 id를 가진 ul에 active 클래스 추가하고 none 클래스 제거
+            var target = $(this).data('target');
+            $(target).removeClass('none').addClass('active');
+        });
+
+        // 모달 열기 버튼 클릭 이벤트
+        $(".open-modal").click(function () {
+            var modalId = $(this).data("modal-id");
+            $("#" + modalId).addClass("active");
+            $("body").css("overflow", "hidden");
+            // window.addEventListener("wheel", removeDefaultEvent, { passive: false });
+        });
+
+        // 모달 닫기 버튼 및 모달 바깥 영역 클릭 이벤트
+        $(".btn-modal-close, .modal-wrap").click(function () {
+            $(".modal-wrap").removeClass("active");
+            $("body").css("overflow", "auto");
+            // window.removeEventListener("wheel", removeDefaultEvent);
+        });
+
+        // 모달 내부 클릭 시 닫기 방지
+        $(".modal-content").click(function (e) {
+            e.stopPropagation();
+        });
+    }
+
+    // 반응형 jQuery 코드
+    function applyResponsivejQuery() {
+        var windowWidth = $(window).width();
+
+        if (windowWidth <= 992) {
+            // 모바일 전용 jQuery 코드
+            var swiper = new Swiper(".historySwiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+            });
+        } else {
+            // PC 전용 jQuery 코드
+            var swiper = new Swiper(".historySwiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                slidesPerView: 3,
+                spaceBetween: 16,
+            });
+        }
+    }
+
+    // 공통 jQuery 적용
+    applyCommonjQuery();
+
+    // 반응형 jQuery 적용
+    applyResponsivejQuery();
+
+    // 창 크기 조정 시 반응형 jQuery 적용
+    $(window).resize(applyResponsivejQuery);
+});
