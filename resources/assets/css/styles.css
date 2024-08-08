@@ -695,6 +695,14 @@
         width: 60px;
     }
 
+    .historySwiper .swiper-button-next {
+        right: -30px;
+    }
+
+    .historySwiper .swiper-button-prev {
+        left: -30px;
+    }
+
     .historySwiper .swiper-button-next::after {
         background: url(../img/ico/i-arrow-left-b.png);
         background-size: cover;
