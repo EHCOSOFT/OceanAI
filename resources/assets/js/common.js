@@ -220,19 +220,39 @@ $(document).ready(function () {
             $parentLi.find('.nav-list').addClass('active');
         });
 
+        $('.nav-list .nav-item a').on('click', function () {
+            $('.nav > li').removeClass('active');
+            $('.nav-list').removeClass('active');
+        });
+        
+        $('.nav-list').on('mouseleave', function () {
+            $('.nav > li').removeClass('active');
+            $('.nav-list').removeClass('active');
+        });
+
         // .nav-list 영역 밖을 클릭하면 active 클래스 제거
         $(document).on('click', function (e) {
-            // 클릭한 요소가 .nav 또는 그 자손이 아닌 경우
             if (!$(e.target).closest('.nav').length) {
-                // 모든 li 요소와 nav-list에서 active 클래스 제거
                 $('.nav > li').removeClass('active');
                 $('.nav-list').removeClass('active');
             }
         });
 
+        
+
         // .btn-menu를 클릭하면 .header-nav가 부드럽게 나타남
         $('.btn-menu').on('click', function () {
             $('.header-nav').addClass('active');
+        });
+
+        $('.header-nav').on('mouseleave', function () {
+            $(this).removeClass('active');
+        });
+
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.header-nav, .btn-menu').length) {
+                $('.header-nav').removeClass('active');
+            }
         });
 
         // .btn-close를 클릭하면 .header-nav가 부드럽게 사라짐
@@ -243,6 +263,20 @@ $(document).ready(function () {
         // .btn-globe를 클릭하면 .header-globe에 active 클래스를 추가
         $('.btn-globe').on('click', function () {
             $('.header-globe').addClass('active');
+        });
+
+        $('.header-globe ul li a').on('click', function () {
+            $('.header-globe').removeClass('active');
+        });
+
+        $('.header-globe').on('mouseleave', function () {
+            $(this).removeClass('active');
+        });
+
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.header-globe, .btn-globe').length) {
+                $('.header-globe').removeClass('active');
+            }
         });
 
         // .header-globe 요소 밖을 클릭하면 .header-globe에서 active 클래스를 제거
@@ -268,6 +302,10 @@ $(document).ready(function () {
             // 클릭된 a의 data-target 속성 값을 가져와 해당 id를 가진 ul에 active 클래스 추가하고 none 클래스 제거
             var target = $(this).data('target');
             $(target).removeClass('none').addClass('active');
+        });
+
+        $('.header-nav-body .right li a').on('click', function () {
+            $('.header-nav').removeClass('active');
         });
 
         // 모달 열기 버튼 클릭 이벤트

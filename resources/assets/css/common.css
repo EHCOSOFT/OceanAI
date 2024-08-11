@@ -1293,6 +1293,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100%;
 }
 
 .file-group h5 {
@@ -1301,13 +1302,14 @@ input::placeholder {
     display: flex;
     font-size: var(--text-md);
     gap: 4px;
+    width: 100%;
 }
 
 .file-area {
     display: flex;
     gap: 8px;
     width: 100%;
-}ㅇㅇ
+}
 
 .file-group input {
     display: none;
@@ -1331,13 +1333,14 @@ input::placeholder {
     align-items: center;
     border: 1px solid var(--black-200);
     border-radius: 8px;
-    flex: 1 auto;
     display: flex;
     gap: 8px;
     padding: 12px 16px;
+    width: calc(100% - 108px);
 }
 
 .file-group .file i {
+    flex: 0 0 auto;
     height: 20px;
     width: 20px;
 }
@@ -1346,6 +1349,11 @@ input::placeholder {
     color: var(--black-400);
     font-size: var(--text-md);
     font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
 }
 
 @media (min-width:992px) { 
