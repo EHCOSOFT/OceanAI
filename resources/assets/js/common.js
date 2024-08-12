@@ -238,13 +238,13 @@ $(document).ready(function () {
             });
 
             // 일정 시간 동안 마우스가 nav-list로 이동하지 않으면 active 클래스 제거
-            removeActiveTimeout = setTimeout(function () {
-                if (!mouseMoved) {
-                    $parentLi.removeClass('active');
-                    $parentLi.find('.nav-list').removeClass('active');
-                }
-                $(document).off('mousemove.navListCheck');
-            }, 1000); // 1000ms 후에 active 클래스 제거
+            // removeActiveTimeout = setTimeout(function () {
+            //     if (!mouseMoved) {
+            //         $parentLi.removeClass('active');
+            //         $parentLi.find('.nav-list').removeClass('active');
+            //     }
+            //     $(document).off('mousemove.navListCheck');
+            // }, 1000); // 1000ms 후에 active 클래스 제거
 
         });
 
@@ -287,31 +287,53 @@ $(document).ready(function () {
             $('.header-nav').removeClass('active');
         });
 
-        // .btn-globe를 클릭하면 .header-globe에 active 클래스를 추가
-        $('.btn-globe').on('click', function () {
-            $('.header-globe').addClass('active');
-        });
+        let removeGlobeActiveTimeout;
 
-        $('.header-globe ul li a').on('click', function () {
+    // .btn-globe 클릭 시
+    $('.btn-globe').on('click', function () {
+        $('.header-globe').addClass('active');
+
+        // 마우스가 header-globe로 이동하지 않으면 active 클래스 제거
+        let mouseMoved = false;
+
+        // 마우스 움직임 감지 이벤트
+        // $(document).on('mousemove.globeCheck', function (e) {
+        //     if ($(e.target).closest('.header-globe').length) {
+        //         mouseMoved = true;
+        //         clearTimeout(removeGlobeActiveTimeout);
+        //     } else if (!$(e.target).closest('.header-globe, .btn-globe').length) {
+        //         // header-globe 외부로 이동 시 active 클래스 제거
+        //         clearTimeout(removeGlobeActiveTimeout);
+        //         $('.header-globe').removeClass('active');
+        //         $(document).off('mousemove.globeCheck');
+        //     }
+        // });
+
+        // 일정 시간 동안 마우스가 header-globe로 이동하지 않으면 active 클래스 제거
+        removeGlobeActiveTimeout = setTimeout(function () {
+            if (!mouseMoved) {
+                $('.header-globe').removeClass('active');
+            }
+            $(document).off('mousemove.globeCheck');
+        }, 1000); // 1000ms 후에 active 클래스 제거
+    });
+
+    // header-globe 내부의 a 요소 클릭 시
+    $('.header-globe ul li a').on('click', function () {
+        $('.header-globe').removeClass('active');
+    });
+
+    // header-globe 영역에서 마우스가 나갈 때 active 클래스 제거
+    $('.header-globe').on('mouseleave', function () {
+        $(this).removeClass('active');
+    });
+
+    // 문서의 다른 부분을 클릭하면 header-globe에서 active 클래스 제거
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.header-globe, .btn-globe').length) {
             $('.header-globe').removeClass('active');
-        });
-
-        $('.header-globe').on('mouseleave', function () {
-            $(this).removeClass('active');
-        });
-
-        $(document).on('click', function (e) {
-            if (!$(e.target).closest('.header-globe, .btn-globe').length) {
-                $('.header-globe').removeClass('active');
-            }
-        });
-
-        // .header-globe 요소 밖을 클릭하면 .header-globe에서 active 클래스를 제거
-        $(document).on('click', function (e) {
-            if (!$(e.target).closest('.btn-globe, .header-globe').length) {
-                $('.header-globe').removeClass('active');
-            }
-        });
+        }
+    });
 
         // .left ul li a 클릭 시 동작
         $('.header-nav-body .left li a').on('click', function (e) {
