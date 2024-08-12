@@ -204,6 +204,7 @@ $(document).ready(function () {
             }
         );
 
+        let removeActiveTimeout;
         // .nav > li 클릭 이벤트 핸들러
         $('.nav > li > a').on('click', function (e) {
             e.preventDefault(); // 기본 링크 동작 방지
@@ -218,13 +219,40 @@ $(document).ready(function () {
             // 현재 클릭된 li 요소에 active 클래스 추가
             $parentLi.addClass('active');
             $parentLi.find('.nav-list').addClass('active');
+
+            // 마우스가 nav-list 바깥으로 나가면 active 클래스 제거
+            let mouseMoved = false;
+
+            // 마우스 움직임 감지 이벤트
+            $(document).on('mousemove.navListCheck', function (e) {
+                if ($(e.target).closest('.nav-list').length) {
+                    mouseMoved = true;
+                    clearTimeout(removeActiveTimeout);
+                } else if (!$(e.target).closest('.nav').length) {
+                    // nav-list 외부로 이동 시 active 클래스 제거
+                    clearTimeout(removeActiveTimeout);
+                    $parentLi.removeClass('active');
+                    $parentLi.find('.nav-list').removeClass('active');
+                    $(document).off('mousemove.navListCheck');
+                }
+            });
+
+            // 일정 시간 동안 마우스가 nav-list로 이동하지 않으면 active 클래스 제거
+            removeActiveTimeout = setTimeout(function () {
+                if (!mouseMoved) {
+                    $parentLi.removeClass('active');
+                    $parentLi.find('.nav-list').removeClass('active');
+                }
+                $(document).off('mousemove.navListCheck');
+            }, 1000); // 1000ms 후에 active 클래스 제거
+
         });
 
         $('.nav-list .nav-item a').on('click', function () {
             $('.nav > li').removeClass('active');
             $('.nav-list').removeClass('active');
         });
-        
+
         $('.nav-list').on('mouseleave', function () {
             $('.nav > li').removeClass('active');
             $('.nav-list').removeClass('active');
@@ -238,7 +266,6 @@ $(document).ready(function () {
             }
         });
 
-        
 
         // .btn-menu를 클릭하면 .header-nav가 부드럽게 나타남
         $('.btn-menu').on('click', function () {
@@ -326,6 +353,23 @@ $(document).ready(function () {
         // 모달 내부 클릭 시 닫기 방지
         $(".modal-content").click(function (e) {
             e.stopPropagation();
+        });
+
+        // 특정 섹션(#ID)으로 이동하는 링크 클릭 처리
+        $('a[href*="#"]').on('click', function (e) {
+            // 링크가 동일한 페이지 내의 앵커로 향하는지 확인
+            if (this.pathname === window.location.pathname && this.hash !== "") {
+                e.preventDefault(); // 기본 앵커 클릭 동작 방지
+
+                var target = $(this.hash); // 해시(hash)를 기준으로 대상 요소 선택
+
+                if (target.length) {
+                    // -100px 오프셋으로 대상 섹션으로 스크롤
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 140
+                    }, 500); // 500ms 동안 부드럽게 스크롤 (옵션)
+                }
+            }
         });
     }
 

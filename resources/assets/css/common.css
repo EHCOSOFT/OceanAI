@@ -807,6 +807,9 @@ h2 {
     }
 
     .nav>li {
+        align-items: center;
+        display: flex;
+        height: 100px;
         position: relative;
     }
 
@@ -840,7 +843,7 @@ h2 {
         padding: 16px 0;
         transform: translateX(-50%);
         transition: .5s ease;
-        top: 68px;
+        top: 99px;
         width: 240px;
         visibility: hidden;
     }
