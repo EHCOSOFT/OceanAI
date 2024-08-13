@@ -859,6 +859,7 @@ h2 {
         font-size: var(--text-lg);
         font-weight: 500;
         padding: 8px 0;
+        text-align: center;
         width: 100%;
     }
 

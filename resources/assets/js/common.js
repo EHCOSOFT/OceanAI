@@ -315,7 +315,7 @@ $(document).ready(function () {
                 $('.header-globe').removeClass('active');
             }
             $(document).off('mousemove.globeCheck');
-        }, 1000); // 1000ms 후에 active 클래스 제거
+        }, 500); // 1000ms 후에 active 클래스 제거
     });
 
     // header-globe 내부의 a 요소 클릭 시

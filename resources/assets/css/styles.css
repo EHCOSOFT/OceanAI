@@ -593,7 +593,8 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    height: 360px;
+    height: 100%;
+    min-height: 360px;
     gap: 16px;
     padding: 24px;
     width: 100%;
@@ -607,7 +608,20 @@
 .history ul {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    max-height: 300px;
     gap: 8px;
+    padding: 0 4px 0 0;
+}
+
+.history ul::-webkit-scrollbar {
+    background: none;
+    width: 4px;
+}
+
+.history ul::-webkit-scrollbar-thumb {
+    background: var(--black-200);
+    border-radius: 100px;
 }
 
 .history dl {
@@ -628,6 +642,7 @@
     color: var(--black-600);
     font-size: var(--text-md);
     font-weight: 500;
+    word-break: break-all;
 }
 
 .swiper {
@@ -1667,7 +1682,7 @@
     .patent-list li {
         width: calc(25% - 10px);
     }
-    
+
     .patent {
         gap: 16px;
     }
@@ -1677,10 +1692,11 @@
         font-weight: 500;
         gap: 8px;
     }
-    
+
     .patent img {
         height: 356px;
     }
+
     .patent .notification {
         background: var(--primary-800);
         border-radius: 100px;
@@ -1713,7 +1729,7 @@
         font-size: 18px;
         margin: 0 0 20px 0;
     }
-    
+
     .password-modal .input-group button {
         font-size: 18px;
         padding: 16px 20px;
