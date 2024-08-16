@@ -591,17 +591,21 @@ h2 {
 }
 
 .header-menu {
+    align-items: center;
     display: flex;
     gap: 12px;
     position: relative;
+    height: 60px;
+}
+
+.header-menu button {
+    height: 100%;
 }
 
 .header-menu .btn-globe {
-    background: url(../img/ico/i-globe.png);
-    background-size: cover;
-    height: 28px;
+    background: none;
+    padding: 0;
     transition: .5s ease;
-    width: 28px;
 }
 
 .header-menu .btn-menu {
@@ -625,7 +629,7 @@ h2 {
     transition: .5s ease;
 }
 
-.header.active .btn-globe {
+.header.active .i-globe {
     background: url(../img/ico/i-globe-active.png);
     background-size: cover;
     transition: .5s ease;
@@ -645,7 +649,7 @@ h2 {
     background: var(--white);
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.05);
     position: absolute;
-    top: 44px;
+    top: 60px;
     left: -50%;
     opacity: 0;
     padding: 12px 0;
@@ -792,8 +796,12 @@ h2 {
         width: 184px;
     }
 
+    .header-menu {
+        height: 100px;
+    }
+
     .header-globe {
-        top: 64px;
+        top: 99px;
     }
 
     .header-navbar {
@@ -979,6 +987,7 @@ h2 {
     color: var(--white);
     font-size: var(--text-md);
     font-weight: 400;
+    text-align: center;
 }
 
 .footer-wrap hr {
@@ -1219,7 +1228,7 @@ input::placeholder {
         height: 20px;
         width: 20px;
     }
-    
+
 }
 
 /* textarea */
@@ -1360,7 +1369,7 @@ input::placeholder {
     width: 100%;
 }
 
-@media (min-width:992px) { 
+@media (min-width:992px) {
     .file-group {
         gap: 12px;
     }
@@ -1383,10 +1392,11 @@ input::placeholder {
         height: 24px;
         width: 24px;
     }
+
     .file-group .file p {
         font-size: 18px;
     }
-    
+
 }
 
 /* **************************************** *

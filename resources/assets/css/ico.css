@@ -56,3 +56,11 @@
     height: 20px;
     width: 20px;
 }
+
+.i-globe {
+    background: url(../img/ico/i-globe.png);
+    background-size: cover;
+    height: 28px;
+    transition: .5s ease;
+    width: 28px;
+}

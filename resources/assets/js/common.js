@@ -70,7 +70,7 @@ $(document).ready(function () {
                         </ul>
                     </nav>
                     <div class="header-menu">
-                        <button type="button" class="btn btn-globe"></button>
+                        <button type="button" class="btn btn-globe"><i class="ico i-globe"></i></button>
                         <div class="header-globe">
                             <ul>
                                 <li class="active">
@@ -297,25 +297,17 @@ $(document).ready(function () {
         let mouseMoved = false;
 
         // 마우스 움직임 감지 이벤트
-        // $(document).on('mousemove.globeCheck', function (e) {
-        //     if ($(e.target).closest('.header-globe').length) {
-        //         mouseMoved = true;
-        //         clearTimeout(removeGlobeActiveTimeout);
-        //     } else if (!$(e.target).closest('.header-globe, .btn-globe').length) {
-        //         // header-globe 외부로 이동 시 active 클래스 제거
-        //         clearTimeout(removeGlobeActiveTimeout);
-        //         $('.header-globe').removeClass('active');
-        //         $(document).off('mousemove.globeCheck');
-        //     }
-        // });
-
-        // 일정 시간 동안 마우스가 header-globe로 이동하지 않으면 active 클래스 제거
-        removeGlobeActiveTimeout = setTimeout(function () {
-            if (!mouseMoved) {
+        $(document).on('mousemove.globeCheck', function (e) {
+            if ($(e.target).closest('.header-globe').length) {
+                mouseMoved = true;
+                clearTimeout(removeGlobeActiveTimeout);
+            } else if (!$(e.target).closest('.header-globe, .btn-globe').length) {
+                // header-globe 외부로 이동 시 active 클래스 제거
+                clearTimeout(removeGlobeActiveTimeout);
                 $('.header-globe').removeClass('active');
+                $(document).off('mousemove.globeCheck');
             }
-            $(document).off('mousemove.globeCheck');
-        }, 500); // 1000ms 후에 active 클래스 제거
+        });
     });
 
     // header-globe 내부의 a 요소 클릭 시
