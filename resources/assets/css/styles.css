@@ -1665,11 +1665,14 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 20px;
-
 }
 
 .patent-list li {
     width: calc(50% - 6px);
+}
+
+.patent-list li.no-content {
+    width: 100%;
 }
 
 .patent {
