@@ -518,7 +518,7 @@
 
 .about-visual-text h1 {
     color: var(--white);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     text-align: center;
 }
@@ -1090,7 +1090,7 @@
 
 .product-visuall-text h1 {
     color: var(--white);
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
 }
 
