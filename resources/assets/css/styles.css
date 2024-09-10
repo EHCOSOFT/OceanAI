@@ -1692,13 +1692,16 @@
 }
 
 .patent p {
+    align-items: center;
     color: var(--black-800);
+    display: flex;
+    flex-direction: column;
     font-size: var(--text-md);
     font-weight: 500;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
     text-align: center;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     width: 100%;
 }
 
@@ -1732,7 +1735,7 @@
         border-radius: 100px;
         color: var(--white);
         font-size: var(--text-lg);
-        margin: 0 8px 0 0;
+        margin: 0;
         padding: 2px 12px;
     }
 }
@@ -1766,6 +1769,34 @@
     }
 }
 
+.patent-modal .modal-inner {
+    position: relative;
+}
+
+.patent-modal .btn-modal-close {
+    position: absolute;
+    top: -20px;
+    right: 0px;
+}
+
+.patent-modal .modal-content {
+    background: none;
+    position: unset;
+    max-width: 80%;
+    padding: 0;
+}
+
+.patent-modal img {
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width:992px) {
+    .patent-modal .modal-content {
+        max-width: 560px;
+    }
+}
+
 .no-history {
     align-items: center;
     display: flex;
@@ -1783,5 +1814,5 @@
         color: var(--black-700);
         font-size: var(--text-lg);
     }
-    
+
 }
