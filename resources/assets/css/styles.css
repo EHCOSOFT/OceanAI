@@ -1782,7 +1782,7 @@
 .patent-modal .modal-content {
     background: none;
     position: unset;
-    max-width: 80%;
+    max-width: 560px;
     padding: 0;
 }
 
@@ -1791,7 +1791,7 @@
     width: 100%;
 }
 
-@media (min-width:992px) {
+@media (min-width:768px) {
     .patent-modal .modal-content {
         max-width: 560px;
     }
